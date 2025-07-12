@@ -69,7 +69,12 @@ select, input[type="text"], textarea {
 .btn:hover {
     background-color: #d5d5d5;
 }
-.form-prioridade{
+.prioridade {
     display: flex;
-    align-items: center;
+}
+.radio-button {
+    margin: 10px;
+}
+.info {
+    margin-top: 10px;
 }
