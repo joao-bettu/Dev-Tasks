@@ -41,7 +41,7 @@ switch ($type){
     break;
 
 case "deletar":
-    $id = $_GET['id'] ?? null;
+    $id = $_POST['id'] ?? null;
     if ($id) {
         $tarefas->deletar($id);
         echo "Tarefa deletada com sucesso.";
@@ -49,6 +49,7 @@ case "deletar":
         echo "ID não informado para deletar.";
     }
     break;
+
 
     default:
         echo "Parâmetro inválido\n";
