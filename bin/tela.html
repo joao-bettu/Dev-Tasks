@@ -51,24 +51,22 @@
                 <input type="hidden" name="id" value="id">
 
                 <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" required placeholder="Título da Tarefa">
+                <input type="text" name="titulo" id="titulo-edit" required placeholder="Título da Tarefa">
 
                 <label for="descricao">Descrição:</label>
-                <input type="text" name="descricao" id="descricao" placeholder="Descrição da Tarefa"></input>
+                <input type="text" name="descricao" id="descricao-edit" placeholder="Descrição da Tarefa"></input>
 
                 <label for="prioridade">Prioridade:</label>
                 <div class="prioridade">
-                    <form id="form-prioridade">
-                        <input type="radio" value="1" id="baixa" name="prioridade" class="radio-button">
-                        <label for="baixa">Baixa</label>
-                        <input type="radio" value="2" id="media" name="prioridade" class="radio-button">
-                        <label for="media">Média</label>
-                        <input type="radio" value="3" id="alta" name="prioridade" class="radio-button">
-                        <label for="alta">Alta</label>
-                    </form>
+                    <input type="radio" value="1" id="baixa-edit" name="prioridade-edit" class="radio-button">
+                    <label for="baixa">Baixa</label>
+                    <input type="radio" value="2" id="media-edit" name="prioridade-edit" class="radio-button">
+                    <label for="media">Média</label>
+                    <input type="radio" value="3" id="alta-edit" name="prioridade-edit" class="radio-button">
+                    <label for="alta">Alta</label>
                 </div>
 
-                <button type="submit" class="btn">Salvar</button>
+                <input type="submit" class="btn" value="Salvar"></input>
                 <button type="button" class="btn" id="cancelar">Cancelar</button>
             </form>
         </section>

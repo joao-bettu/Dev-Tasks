@@ -50,7 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     "prioridade": prioridade
                 }
 
-        
+        const edit_titulo = document.getElementById("titulo-edit");
+        const edit_descricao = document.getElementById("descricao-edit");
+        const edit_prioridade = document.getElementsByName("prioridade-edit");
+
+        edit_titulo.textContent = tarefa.titulo;
+        edit_descricao.textContent = tarefa.descricao;
+        edit_prioridade[tarefa.prioridade-1].click();
 
     })
 
