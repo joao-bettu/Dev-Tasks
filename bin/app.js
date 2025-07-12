@@ -74,4 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
         hideShownSections(-1, sections);
     })
     
+    const cancelarEdicao = document.getElementById("cancelar-edit");
+    cancelarEdicao.addEventListener("click", (event) => {
+        event.preventDefault();
+        const form = document.getElementById("form-edicao");
+        form.reset();
+        hideShownSections(-1, sections);
+    })
 });
