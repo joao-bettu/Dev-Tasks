@@ -31,4 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         hideShownSections(2, sections);
     })
+
+    const cancelarCriacao = document.getElementById("cancelar");
+
+    cancelarCriacao.addEventListener("click", (event) => {
+        event.preventDefault();
+        const form = document.getElementById("form-cadastro");
+        form.reset();
+        hideShownSections(-1, sections);
+    })
+    
 });
