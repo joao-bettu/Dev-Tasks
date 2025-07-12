@@ -69,3 +69,7 @@ select, input[type="text"], textarea {
 .btn:hover {
     background-color: #d5d5d5;
 }
+.form-prioridade{
+    display: flex;
+    align-items: center;
+}

@@ -12,30 +12,33 @@
                 <h2>O que você deseja realizar?</h2>
 
                 <form id="actions-form">
-                    <button class="action-buttons" type="submit">Cadastrar tarefas</button>
-                    <button class="action-buttons" type="submit">Editar tarefas</button>
-                    <button class="action-buttons" type="submit">Listar tarefas</button>                        
+                    <button class="action-buttons" type="submit" id="button-cadastrar">Cadastrar tarefas</button>
+                    <button class="action-buttons" type="submit" id="button-editar">Editar tarefas</button>
+                    <button class="action-buttons" type="submit" id="button-listar">Listar tarefas</button>                        
                 </form>          
             </div>
         
         <section class="hidden" id="Cadastrar">
             <h2>Cadastro de Tarefas</h2>
 
-            <form method="POST" action="salvar.php">
-                <input type="hidden" name="id" value="<?= isset($tarefa) ? $tarefa->getId() : '' ?>">
+            <form method="POST" action="index.php">
+                <input type="hidden" name="id" value="id">
 
                 <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" required value="<?= isset($tarefa) ? $tarefa->getTitulo() : '' ?>">
+                <input type="text" name="titulo" id="titulo" required placeholder="Título da Tarefa">
 
                 <label for="descricao">Descrição:</label>
-                <textarea name="descricao" id="descricao" rows="4"><?= isset($tarefa) ? $tarefa->getDescricao() : '' ?></textarea>
+                <input type="text" name="descricao" id="descricao" placeholder="Descrição da Tarefa"></input>
 
                 <label for="prioridade">Prioridade:</label>
-                <select name="prioridade" id="prioridade">
-                    <option value="baixa" <?= isset($tarefa) && $tarefa->getPrioridade() === 'baixa' ? 'selected' : '' ?>>Baixa</option>
-                    <option value="media" <?= isset($tarefa) && $tarefa->getPrioridade() === 'media' ? 'selected' : '' ?>>Média</option>
-                    <option value="alta" <?= isset($tarefa) && $tarefa->getPrioridade() === 'alta' ? 'selected' : '' ?>>Alta</option>
-                </select>
+                <form id="form-prioridade">
+                    <input type="radio" value="1" id="baixa" name="prioridade">
+                    <label for="baixa">Baixa</label>
+                    <input type="radio" value="2" id="media" name="prioridade">
+                    <label for="media">Média</label>
+                    <input type="radio" value="3" id="alta" name="prioridade">
+                    <label for="alta">Alta</label>
+                </form>
 
                 <br><br>
                 <button type="submit" class="btn">Salvar</button>
@@ -77,4 +80,5 @@
             </table>
         </section>
     </div>
+    <script src="app.js"></script>
 </body>
