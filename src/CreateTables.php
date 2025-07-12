@@ -12,7 +12,7 @@ class CreateTables { // Apenas cria a tabela de tarefas
         $this->criarTabelaTarefas();
     }
 
-    public function criarTabelaTarefas() {
+    private function criarTabelaTarefas() {
         $this->pdo->exec("CREATE TABLE IF NOT EXISTS tarefas (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 titulo TEXT,
