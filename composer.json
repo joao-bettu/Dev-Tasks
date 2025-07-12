@@ -1,0 +1,15 @@
+{
+    "name": "ixcsoft/dev-tasks",
+    "autoload": {
+        "psr-4": {
+            "Tasks\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "joao-bettu",
+            "email": "joaobettuvictor@gmail.com"
+        }
+    ],
+    "require": {}
+}
