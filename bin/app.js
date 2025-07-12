@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const listar = document.getElementById("button-listar");
 
     const sections = document.getElementsByClassName("hidden");
+    const selecionada = document.getElementsByClassName("checkbox");
 
     function hideShownSections(index, sections) {
         for (let i = 0; i < sections.length; i++){
@@ -25,6 +26,32 @@ document.addEventListener("DOMContentLoaded", () => {
     editar.addEventListener("click", (event) => {
         event.preventDefault();
         hideShownSections(1, sections);
+
+        for(let i = 0; i < selecionada.length; i++){
+            if(selecionada[i].value == "selected"){
+                selectedTask = selecionada[i].closest("tr");
+                break;
+            }
+        }
+
+        let prioridade;
+        if (selectedTask[4].textContent == "Baixa"){
+            prioridade = 1;
+        } else if(selectedTask[4].textContent == "Média") {
+            prioridade = 2;
+        } else {
+            prioridade = 3
+        }
+
+        const tarefa = {
+                    "id": selectedTask[1].textContent,
+                    "titulo": selectedTask[2].textContent,
+                    "descricao": selectedTask[3].textContent,
+                    "prioridade": prioridade
+                }
+
+        
+
     })
 
     listar.addEventListener("click", (event) => {

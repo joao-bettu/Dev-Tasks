@@ -48,7 +48,32 @@
         </section>
 
         <section class="hidden" id="Editar">
+            <h2>Edição de Tarefas</h2>
 
+            <form method="POST" action="index.php?type=criar" class="info" id="form-cadastro">
+                <input type="hidden" name="id" value="id">
+
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" id="titulo" required placeholder="Título da Tarefa">
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao" id="descricao" placeholder="Descrição da Tarefa"></input>
+
+                <label for="prioridade">Prioridade:</label>
+                <div class="prioridade">
+                    <form id="form-prioridade">
+                        <input type="radio" value="1" id="baixa" name="prioridade" class="radio-button">
+                        <label for="baixa">Baixa</label>
+                        <input type="radio" value="2" id="media" name="prioridade" class="radio-button">
+                        <label for="media">Média</label>
+                        <input type="radio" value="3" id="alta" name="prioridade" class="radio-button">
+                        <label for="alta">Alta</label>
+                    </form>
+                </div>
+
+                <button type="submit" class="btn">Salvar</button>
+                <button type="button" class="btn" id="cancelar">Cancelar</button>
+            </form>
         </section>
 
         <section class="hidden" id="Listar">
@@ -66,8 +91,8 @@
                 <tbody>
                     <?php foreach ($tarefas as $tarefa): ?>
                          <tr>
-                            <td>
-                                <input type="radio" name="selecionado" value="<?= $tarefa->getId() ?>">
+                            <td class="checkbox">
+                                <input type="radio" name="selecionado" value="selected">
                             </td>
                             <td><?= $tarefa->getId() ?></td>
                             <td><?= htmlspecialchars($tarefa->getTitulo()) ?></td>
