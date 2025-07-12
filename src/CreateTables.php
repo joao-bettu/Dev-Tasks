@@ -10,6 +10,7 @@ class CreateTables { // Apenas cria a tabela de tarefas
     public function __construct(PDO $db) {
         $this->pdo = $db;
         $this->criarTabelaTarefas();
+        echo "Tabela de Tarefas criada!\n";
     }
 
     private function criarTabelaTarefas() {

@@ -6,12 +6,12 @@ use PDO;
 use PDOException;
 use Tasks\DB;
 
-class Task {
+class Tasks {
     private array $columns = [
         "id",
-        "title",
-        "description",
-        "priority"
+        "titulo",
+        "descricao",
+        "prioridade"
     ];
     // Prioridade númerica: 1 - Baixa, 2 - Médio e 3 - Alta
 
