@@ -36,22 +36,20 @@ switch ($type){
         echo "Tarefa editada com sucesso.";
         break;
 
-    case "listar":
-         case "listar":
-        $lista = $tarefas->listar();
-        echo "<pre>";
-        print_r($lista);
-        echo "</pre>";
-        break;
-    case "deletar";
+  case "listar":
+    $tarefasArray = $tarefas->listar();
+    break;
+
+case "deletar":
     $id = $_GET['id'] ?? null;
-        if ($id) {
-            $tarefas->deletar($id);
-            echo "Tarefa deletada com sucesso.";
-        } else {
-            echo "ID não informado para deletar.";
-        }
-        break;
+    if ($id) {
+        $tarefas->deletar($id);
+        echo "Tarefa deletada com sucesso.";
+    } else {
+        echo "ID não informado para deletar.";
+    }
+    break;
+
     default:
         echo "Parâmetro inválido\n";
         break;
